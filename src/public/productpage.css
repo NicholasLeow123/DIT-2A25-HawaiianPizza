@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #a8dadc;
+}
+
+.main-wrap .product{
+    width: 90%;
+    max-width: 750px;
+    display: flex;
+}
+
+.main-wrap .product .image-gallery{
+    flex-basis: 43%;
+    background: #011627;
+    box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.07);
+    position: relative;
+}
+
+.main-wrap .product .image-gallery img{
+    width: 100%;
+    padding-top: 150px;
+}
+
+.main-wrap .product .image-gallery .controls{
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+}
+
+.main-wrap .product .image-gallery .controls .btn{
+    width: 15px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.main-wrap .product .image-gallery .controls .btn .active{
+    background: #00b4d8;
+}
+
+.main-wrap .product .product-details{
+    flex-basis: 53%;
+    background: #fff;
+    box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
