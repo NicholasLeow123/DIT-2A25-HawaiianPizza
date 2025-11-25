@@ -1,57 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My Web App</title>
-    <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        padding: 10px;
-        border: 1px solid #ddd;
-        text-align: left;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <title>Chase's Cars | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>My Web App</h1>
+    <div class="page">
+      <!-- Navbar -->
+      <header class="navbar">
+        <a href="index.html" class="navbar-left brand-link">
+          <div class="brand-mark"></div>
+          <div>
+            <div class="brand-text-main">Chase's Cars</div>
+            <div class="brand-text-sub">Night Market Garage</div>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="cars.html">Cars</a>
+          <a class="nav-link" href="parts.html">Car Parts</a>
+          <a class="nav-link" href="deals.html">Deals</a>
+          <a class="nav-link" href="profile.html">Profile</a>
+        </nav>
+        <div class="nav-profile">
+          <span class="nav-tag">NFS Inspired</span>
+          <div class="nav-avatar"></div>
+        </div>
+      </header>
 
-    <!-- Form to add new something -->
-    <form id="somethingForm">
-      <p>
-        <label for="somethingName">Name:</label>
-        <input type="text" id="somethingName" name="somethingName" required />
-      </p>
-      <button type="submit">Enter</button>
-    </form>
+      <!-- Hero -->
+      <main>
+        <section class="hero">
+          <div>
+            <div class="hero-kicker">Welcome to the Night Shift</div>
+            <h1 class="hero-title">
+              Build your <span class="hero-highlight">dream garage</span> and
+              rule the city streets.
+            </h1>
+            <p class="hero-body">
+              StreetTorque Motors is your all-in-one hub for performance cars,
+              race-ready parts, and limited-time underground deals. Browse,
+              compare, and get your ride setup ready for race night.
+            </p>
+            <div class="hero-cta">
+              <a href="cars.html" class="btn btn-primary">
+                Browse Cars
+              </a>
+              <a href="parts.html" class="btn btn-ghost">
+                Upgrade with Parts
+              </a>
+            </div>
+            <p class="text-muted mt-3">
+              Frontend only for now – cart & checkout will be wired by the
+              backend crew.
+            </p>
+          </div>
 
-    <h2>Table</h2>
+          <!-- Right hero card -->
+          <aside class="hero-card">
+            <div class="hero-car-label">Featured build</div>
+            <div class="hero-car-name">2002 Nightspec RX-7</div>
+            <div class="hero-card-strip">
+              <span class="hero-tag-pill">Twin-Turbo Rotary</span>
+              <span class="hero-tag-pill">Midnight Blue</span>
+              <span class="hero-tag-pill">Street Legal*</span>
+            </div>
+            <div class="hero-spec-grid">
+              <div>
+                <div class="hero-spec-label">Power</div>
+                <div class="hero-spec-value">420 HP</div>
+              </div>
+              <div>
+                <div class="hero-spec-label">0–100 km/h</div>
+                <div class="hero-spec-value">4.1 s</div>
+              </div>
+              <div>
+                <div class="hero-spec-label">Drive</div>
+                <div class="hero-spec-value">RWD</div>
+              </div>
+            </div>
+            <div class="hero-price-row">
+              <div>
+                <div class="hero-spec-label">Starting from</div>
+                <div class="hero-main-price">$128,000</div>
+              </div>
+              <div class="text-muted">Tap “Browse Cars” to see catalog</div>
+            </div>
+            <div class="hero-dummy-car"></div>
+          </aside>
+        </section>
 
-    <!-- Table to view all somethings -->
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="somethingsTableBody">
-        <!-- Rows will be populated by JavaScript -->
-      </tbody>
-    </table>
+        <!-- Quick deals -->
+        <section>
+          <div class="section-header">
+            <h2 class="section-title">Hot Deals</h2>
+            <p class="section-subtitle">
+              Limited-time promos on cars and parts. Perfect for your CI/CD
+              test data.
+            </p>
+          </div>
 
-    <!-- Template for something row -->
-    <template id="somethingRowTemplate">
-      <tr>
-        <td class="something-id"></td>
-        <td class="something-name"></td>
-        <td><button class="delete-button">Delete</button></td>
-      </tr>
-    </template>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-tag">Launch Deal</div>
+              <div class="product-name">Starter Drift Pack</div>
+              <div class="product-meta">
+                Entry-level RWD coupe + basic coilovers + street pads.
+              </div>
+              <div class="product-price-row">
+                <span class="product-price">$39,999</span>
+                <span class="text-muted">Save up to 12%</span>
+              </div>
+            </article>
 
-    <script src="./index.js" type="text/javascript"></script>
+            <article class="product-card">
+              <div class="product-tag">Parts Bundle</div>
+              <div class="product-name">Stage 1 Power Kit</div>
+              <div class="product-meta">
+                Intake, exhaust, tune. Ideal for nightly builds and test runs.
+              </div>
+              <div class="product-price-row">
+                <span class="product-price">$1,299</span>
+                <span class="text-muted">Perfect for pipelines</span>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-tag">VIP</div>
+              <div class="product-name">Full Garage Pass</div>
+              <div class="product-meta">
+                Priority access, early-bird discounts, profile badges.
+              </div>
+              <div class="product-price-row">
+                <span class="product-price">$29 / month</span>
+                <span class="text-muted">Future feature placeholder</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>

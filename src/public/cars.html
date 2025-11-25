@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chase's Cars | Cars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Navbar -->
+      <header class="navbar">
+        <a href="index.html" class="navbar-left brand-link">
+          <div class="brand-mark"></div>
+          <div>
+            <div class="brand-text-main">Chase's Cars</div>
+            <div class="brand-text-sub">Night Market Garage</div>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="cars.html">Cars</a>
+          <a class="nav-link" href="parts.html">Car Parts</a>
+          <a class="nav-link" href="deals.html">Deals</a>
+          <a class="nav-link" href="profile.html">Profile</a>
+        </nav>
+        <div class="nav-profile">
+          <span class="nav-tag">Catalog</span>
+          <div class="nav-avatar"></div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section-header">
+          <h1 class="section-title">Cars</h1>
+          <p class="section-subtitle">
+            Pick your base chassis. Comparison & cart are frontend-only stubs for
+            now.
+          </p>
+        </section>
+
+        <!-- Filters (UI only for now) -->
+        <section class="filters-bar">
+          <button class="filter-pill active">All</button>
+          <button class="filter-pill">JDM</button>
+          <button class="filter-pill">Euro</button>
+          <button class="filter-pill">Muscle</button>
+          <button class="filter-pill">AWD</button>
+        </section>
+
+        <!-- Cars grid -->
+        <section class="product-grid">
+          <!-- Example car card 1 -->
+          <article
+            class="product-card"
+            data-product-id="rx7"
+            data-product-name="2002 Nightspec RX-7"
+            data-product-type="JDM"
+            data-product-power="420 HP"
+            data-product-price-display="$128,000"
+          >
+            <div class="product-tag">JDM • RWD</div>
+            <div class="product-name">2002 Nightspec RX-7</div>
+            <div class="product-meta">
+              Twin-turbo rotary build tuned for tight city circuits and drift
+              competitions.
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">$128,000</span>
+              <span class="text-muted">Est. 420 HP</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-ghost" type="button" data-compare-toggle>
+                Compare
+              </button>
+              <button class="btn btn-primary" type="button" data-add-cart>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <!-- Example car card 2 -->
+          <article
+            class="product-card"
+            data-product-id="gtr"
+            data-product-name="2019 Skyline GTR R35"
+            data-product-type="AWD"
+            data-product-power="565 HP"
+            data-product-price-display="$210,000"
+          >
+            <div class="product-tag">AWD • GT</div>
+            <div class="product-name">2019 Skyline GTR R35</div>
+            <div class="product-meta">
+              All-wheel drive monster, perfect for high-speed highway pulls and
+              looking cool.
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">$210,000</span>
+              <span class="text-muted">Est. 565 HP</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-ghost" type="button" data-compare-toggle>
+                Compare
+              </button>
+              <button class="btn btn-primary" type="button" data-add-cart>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <!-- Example car card 3 -->
+          <article
+            class="product-card"
+            data-product-id="mustang"
+            data-product-name="2020 Mustang GT"
+            data-product-type="Muscle"
+            data-product-power="460 HP"
+            data-product-price-display="$95,000"
+          >
+            <div class="product-tag">Muscle • RWD</div>
+            <div class="product-name">2020 Mustang GT</div>
+            <div class="product-meta">
+              Big V8, big attitude. Built for loud exits and clean quarter-mile
+              times. Don't mess with the Beast.
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">$95,000</span>
+              <span class="text-muted">Est. 460 HP</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn btn-ghost" type="button" data-compare-toggle>
+                Compare
+              </button>
+              <button class="btn btn-primary" type="button" data-add-cart>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <!-- Compare bar (shared across catalog pages) -->
+    <div class="compare-bar" id="compareBar">
+      <div class="compare-list" id="compareList"></div>
+      <button class="btn btn-primary" id="compareNowButton" type="button">
+        Compare Selected
+      </button>
+    </div>
+
+    <!-- Compare modal -->
+    <div class="modal-backdrop" id="compareBackdrop">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="section-title" style="font-size: 0.9rem">Compare</h2>
+          <button
+            class="btn btn-ghost"
+            type="button"
+            id="compareCloseButton"
+            style="font-size: 0.75rem; padding-inline: 10px"
+          >
+            Close
+          </button>
+        </div>
+        <table class="modal-table">
+          <thead>
+            <tr>
+              <th>Car</th>
+              <th>Type</th>
+              <th>Power</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="compareTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
