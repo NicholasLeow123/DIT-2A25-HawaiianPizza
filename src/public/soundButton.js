@@ -55,4 +55,16 @@ const AudioPlayer = (() => {
       console.log(`Audio player initialized on ${audioButtons.length} button(s)`);
     };
 
-});
+    // Public API for calling the modules
+    return {
+      play,
+      init
+    };
+})();
+
+// Auto initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', AudioPlayer.init);
+} else {
+  AudioPlayer.init();
+}
