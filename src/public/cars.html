@@ -5,6 +5,7 @@
     <title>Chase's Cars | Cars</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="soundButton.js"></script>
   </head>
   <body>
     <div class="page">
@@ -73,7 +74,7 @@
               <button class="btn btn-ghost" type="button" data-compare-toggle>
                 Compare
               </button>
-              <button class="btn btn-primary" type="button" data-add-cart>
+              <button data-audio="C:\CICD\project\Nicholas\DIT-2A25-HawaiianPizza\src\public\sounds\add_to_cart_bright_bell.mp3"class="btn btn-primary" type="button" data-add-cart>
                 Add to Cart
               </button>
             </div>
@@ -102,7 +103,11 @@
               <button class="btn btn-ghost" type="button" data-compare-toggle>
                 Compare
               </button>
-              <button class="btn btn-primary" type="button" data-add-cart>
+              <button 
+                class="btn btn-primary" 
+                type="button" 
+                data-add-cart
+                data-audio="./sounds/add_to_cart_bright_bell.mp3">
                 Add to Cart
               </button>
             </div>
