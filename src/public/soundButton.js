@@ -46,6 +46,8 @@ const AudioPlayer = (() => {
           const audioPath = button.dataset.audio;
           const volume = parseFloat(button.dataset.audioVolume) || 0.5;
 
+          console.log("Button clicked, audioPath =", audioPath);
+
           if (audioPath) {
             play(audioPath, volume);
           }
