@@ -32,5 +32,27 @@ const AudioPlayer = (() => {
     return audio.play().catch(err => {
         console.warn('Could not play audio:', err.message);
     });
-  }
+  };
+
+      /**
+     * Initialize audio player on buttons with data-audio attribute
+     * eg <button data-audio="./sounds/add_to_cart_bright_bell.mp3" data-audio-volume="0.7">Click me</button>
+     */
+    const init = () => {
+      const audioButtons = document.querySelectorAll('[data-audio]');
+
+      audioButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const audioPath = button.dataset.audioVolume;
+          const volume = parseFloat(button.dataset.audioVolume) || 0.5;
+
+          if (audioPath) {
+            play(audioPath, volume);
+          }
+        });
+      });
+
+      console.log(`Audio player initialized on ${audioButtons.length} button(s)`);
+    };
+
 });
