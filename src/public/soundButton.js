@@ -28,6 +28,9 @@ const AudioPlayer = (() => {
 
     //reset playback to zero
     audio.currentTime = 0;
-    
+
+    return audio.play().catch(err => {
+        console.warn('Could not play audio:', err.message);
+    });
   }
 });
