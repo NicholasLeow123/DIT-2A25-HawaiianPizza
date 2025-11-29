@@ -43,7 +43,7 @@ const AudioPlayer = (() => {
 
       audioButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-          const audioPath = button.dataset.audioVolume;
+          const audioPath = button.dataset.audio;
           const volume = parseFloat(button.dataset.audioVolume) || 0.5;
 
           if (audioPath) {
