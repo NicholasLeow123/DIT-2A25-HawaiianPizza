@@ -25,5 +25,9 @@ const AudioPlayer = (() => {
         audio.preload = 'auto';
         audioCache.set(audioPath, audio);
     }
+
+    //reset playback to zero
+    audio.currentTime = 0;
+    
   }
 });
