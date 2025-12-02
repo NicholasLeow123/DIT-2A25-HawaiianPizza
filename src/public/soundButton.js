@@ -2,6 +2,8 @@
     can be attached to any button with data-audio attribute
 */
 
+console.log("soundButton.js loaded");
+
 const AudioPlayer = (() => {
   // Private variables
   const audioCache = new Map();
