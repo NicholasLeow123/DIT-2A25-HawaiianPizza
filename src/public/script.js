@@ -13,13 +13,6 @@ function setToken(token) { localStorage.setItem('token', token); }
 function getToken() { return localStorage.getItem('token'); }
 function removeToken() { localStorage.removeItem('token'); }
 
-function showView(view) {
-  loginView.style.display = 'none';
-  registerView.style.display = 'none';
-  profileView.style.display = 'none';
-  view.style.display = 'block';
-}
-
 if (showRegisterBtn) {
   showRegisterBtn.onclick = () => showView(registerView);
 }
@@ -124,6 +117,12 @@ function openCompareModal() {
   const items = getCompareItems();
 
   if (!backdrop || !tableBody) return;
+}
+function closeCompareModal() {
+  const backdrop = document.getElementById("compareBackdrop");
+  if (!backdrop) return;
+  backdrop.style.display = "none";
+}
 
 async function register() {
   const name = document.getElementById('regName').value;
@@ -492,6 +491,19 @@ if (updateProfileBtn) {
 document.addEventListener('DOMContentLoaded', loadProfile);
   renderCompareBar();
 
+  if (loginBtn) {
+  loginBtn.onclick = login;
+}
+
+if (registerBtn) {
+  registerBtn.onclick = register;
+}
+
+if (updateProfileBtn) {
+  updateProfileBtn.onclick = updateProfile;
+}
+
+  // 🔥 Load cars from backend + render cards
 // -------- PAGE CHECK (VERY IMPORTANT) --------
 const currentPage = window.location.pathname.split("/").pop();
 
