@@ -21,6 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 //cars page routes
 app.use('/cars', require('./routers/carsRoutes'));
 
+//car parts page routes
+app.use('/carParts', require('./routers/carPartsRoutes'));
+
 //compare page routes
 app.use('/api/compare', compareRoutes);
 
