@@ -8,6 +8,7 @@ const somethingRouter = require('./routers/Something.router');
 const personRouter = require('./routers/Person.router');
 const cartRouter = require('./routers/Cart.router');
 const compareRoutes = require('./routers/compareRoutes');
+const wishlistRoutes = require("./routes/wishlistRoutes");
 
 const path = require('path');
 
@@ -22,6 +23,8 @@ app.use('/cars', require('./routers/carsRoutes'));
 //compare page routes
 app.use('/api/compare', compareRoutes);
 
+//wishlist routes
+app.use("/api/wishlist", wishlistRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/somethings', somethingRouter);
