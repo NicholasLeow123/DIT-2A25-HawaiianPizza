@@ -1,7 +1,7 @@
 // src/routers/compareRoutes.js
 const express = require("express");
 const router = express.Router();
-const compareController = require("../controllers/compareController");
+const compareController = require("../controllers/compareController.js");
 
 router.post("/", compareController.add);
 router.delete("/reset", compareController.reset);

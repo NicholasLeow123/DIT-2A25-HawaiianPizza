@@ -1,10 +1,15 @@
-//Car parts router for the search filter, ai assisted
-
 const express = require('express');
 const router = express.Router();
-const { searchCarParts } = require('../controllers/carPartControllers');
+const carsPartsControllers = require('../controllers/carPartsControllers');
 
 // GET /api/carParts/search
-router.get('/search', searchCarParts);
+router.get('/search', carsPartsControllers.searchCarParts);
+
+// GET all cars
+router.get('/', carsPartsControllers.getAllCarParts);
+
+// GET one car part by carPartsid
+router.get('/:carPartsid', carsPartsControllers.getCarParts);
+
 
 module.exports = router;
