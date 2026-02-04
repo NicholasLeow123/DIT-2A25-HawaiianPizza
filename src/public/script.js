@@ -535,3 +535,42 @@ async function resetComparisonSession() {
   localStorage.removeItem("compareSessionId");
   alert("Comparison cleared. You can select new cars.");
 }
+
+// Dark/light theme toggle, assisted by ai
+(function() {
+  const STORAGE_KEY = 'theme';
+  const html = document.documentElement;
+  
+  // Get saved theme or default to dark
+  function getTheme() {
+    return localStorage.getItem(STORAGE_KEY) || 'dark';
+  }
+  
+  // Apply theme
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    const icon = document.getElementById('theme-icon');
+    if (icon) {
+      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+  }
+  
+  // Toggle theme
+  function toggleTheme() {
+    const current = html.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem(STORAGE_KEY, next);
+  }
+  
+  // Apply immediately (prevents flash)
+  applyTheme(getTheme());
+  
+  // Setup toggle button when DOM ready
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', toggleTheme);
+    }
+  });
+})();
