@@ -1,0 +1,190 @@
+/* Theme Variables for Dark and Light mode */
+
+:root,
+[data-theme="dark"] {
+  /* Backgrounds - Dark */
+  --bg-main: #020617;
+  --bg-elevated: #020617;
+  --bg-panel: #111827;
+  
+  /* Accents */
+  --accent-primary: #00f5ff;
+  --accent-secondary: #ff007a;
+  --accent-soft: rgba(0, 245, 255, 0.15);
+  
+  /* Text */
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  
+  /* Borders & Effects */
+  --border-subtle: #1f2937;
+  --shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.8);
+  
+  /* Neon effects */
+  --neon: rgba(0, 245, 255, 1);
+  --neon-soft: rgba(0, 245, 255, 0.6);
+  --neon-dim: rgba(0, 245, 255, 0.3);
+  
+  /* Background gradients */
+  --bg-gradient-1: rgba(0, 245, 255, 0.12);
+  --bg-gradient-2: rgba(255, 0, 122, 0.16);
+  --nav-bg-1: rgba(15, 23, 42, 0.7);
+  --nav-bg-2: rgba(17, 24, 39, 0.8);
+  --nav-border: rgba(148, 163, 184, 0.22);
+  
+  /* Common values */
+  --radius-card: 18px;
+  --transition-fast: 0.18s ease-out;
+
+  /* Hero card specific */
+  --hero-card-bg-gradient-1: rgba(0, 245, 255, 0.18);
+  --hero-card-bg-gradient-2: rgba(255, 0, 122, 0.16);
+  --hero-card-bg-1: rgba(15, 23, 42, 0.98);
+  --hero-card-bg-2: rgba(3, 7, 18, 0.98);
+  --hero-card-border: rgba(148, 163, 184, 0.35);
+  --hero-card-grid-1: rgba(148, 163, 184, 0.1);
+  --hero-card-grid-2: rgba(148, 163, 184, 0.06);
+  --hero-dummy-car-glow: rgba(56, 189, 248, 0.45);
+  --hero-tag-pill-border: rgba(148, 163, 184, 0.4);
+  
+  /* Button variables for dark mode */
+  --btn-primary-bg: linear-gradient(135deg,
+    rgba(0, 246, 255, 0.92),
+    rgba(56, 189, 248, 0.92),
+    rgba(0, 246, 255, 0.92)
+  );
+  --btn-primary-text: #020617;
+  --btn-primary-shadow: 0 4px 16px rgba(0, 245, 255, 0.4);
+  --btn-primary-glow: 0 0 28px rgba(0, 245, 255, 0.45);
+  --btn-primary-hover-shadow: 0 6px 22px rgba(0, 245, 255, 0.55);
+  --btn-primary-hover-glow: 0 0 50px rgba(0, 245, 255, 0.6);
+  --btn-primary-halo: rgba(0, 245, 255, 0.9);
+  
+  --btn-ghost-bg: rgba(6, 13, 23, 0.65);
+  --btn-ghost-text: rgba(56, 189, 248, 0.95);
+  --btn-ghost-border: rgba(56, 189, 248, 0.35);
+  --btn-ghost-hover-border: rgba(56, 189, 248, 0.7);
+  --btn-ghost-hover-text: rgba(56, 189, 248, 1);
+  --btn-ghost-hover-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+  --btn-ghost-hover-glow: 0 0 32px rgba(56, 189, 248, 0.6);
+  
+  /* Nav link hover */
+  --nav-link-hover-bg: rgba(6, 13, 23, 0.9);
+  --nav-link-hover-border: rgba(0, 245, 255, 0.35);
+  --nav-link-hover-shadow: 0 0 16px rgba(0, 245, 255, 0.25);
+  --nav-link-active-bg: var(--neon);
+  --nav-link-active-text: #020617;
+  --nav-link-active-shadow-1: 0 4px 16px rgba(0, 245, 255, 0.55);
+  --nav-link-active-shadow-2: 0 0 40px rgba(0, 245, 255, 0.7);
+  
+  /* Carousel dots */
+  --carousel-dot-border: rgba(148, 163, 184, 0.75);
+  
+  /* Product card */
+  --product-card-border: #1f2937;
+  --product-card-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+  --product-card-hover-border: rgba(0, 245, 255, 0.7);
+  --product-card-hover-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+  --product-card-glow: rgba(0, 245, 255, 0.12);
+  
+  /* Filter pill */
+  --filter-pill-bg: rgba(15, 23, 42, 0.9);
+}
+
+[data-theme="light"] {
+  /* Backgrounds - Light */
+  --bg-main: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-panel: #ffffff;
+  
+  /* Accents - Adjusted for light mode */
+  --accent-primary: #0891b2;
+  --accent-secondary: #db2777;
+  --accent-soft: rgba(8, 145, 178, 0.1);
+  
+  /* Text - Light theme */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  
+  /* Borders & Effects */
+  --border-subtle: #e2e8f0;
+  --shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.15);
+  
+  /* Neon effects adjusted */
+  --neon: rgba(8, 145, 178, 1);
+  --neon-soft: rgba(8, 145, 178, 0.7);
+  --neon-dim: rgba(8, 145, 178, 0.4);
+  
+  /* Background gradients for light */
+  --bg-gradient-1: rgba(8, 145, 178, 0.05);
+  --bg-gradient-2: rgba(219, 39, 119, 0.05);
+  --nav-bg-1: rgba(248, 250, 252, 0.9);
+  --nav-bg-2: rgba(255, 255, 255, 0.9);
+  --nav-border: rgba(226, 232, 240, 0.8);
+
+  /* Hero card specific for light mode */
+  --hero-card-bg-gradient-1: rgba(8, 145, 178, 0.08);
+  --hero-card-bg-gradient-2: rgba(219, 39, 119, 0.08);
+  --hero-card-bg-1: rgba(255, 255, 255, 0.95);
+  --hero-card-bg-2: rgba(248, 250, 252, 0.95);
+  --hero-card-border: rgba(226, 232, 240, 0.8);
+  --hero-card-grid-1: rgba(100, 116, 139, 0.08);
+  --hero-card-grid-2: rgba(100, 116, 139, 0.04);
+  --hero-dummy-car-glow: rgba(8, 145, 178, 0.3);
+  --hero-tag-pill-border: rgba(226, 232, 240, 0.8);
+  
+  /* Button variables for light mode */
+  --btn-primary-bg: linear-gradient(135deg,
+    rgba(8, 145, 178, 0.95),
+    rgba(6, 182, 212, 0.95),
+    rgba(8, 145, 178, 0.95)
+  );
+  --btn-primary-text: #ffffff;
+  --btn-primary-shadow: 0 4px 16px rgba(8, 145, 178, 0.25);
+  --btn-primary-glow: 0 0 28px rgba(8, 145, 178, 0.3);
+  --btn-primary-hover-shadow: 0 6px 22px rgba(8, 145, 178, 0.35);
+  --btn-primary-hover-glow: 0 0 50px rgba(8, 145, 178, 0.4);
+  --btn-primary-halo: rgba(8, 145, 178, 0.6);
+  
+  --btn-ghost-bg: rgba(248, 250, 252, 0.8);
+  --btn-ghost-text: rgba(8, 145, 178, 1);
+  --btn-ghost-border: rgba(8, 145, 178, 0.3);
+  --btn-ghost-hover-border: rgba(8, 145, 178, 0.6);
+  --btn-ghost-hover-text: rgba(8, 145, 178, 1);
+  --btn-ghost-hover-shadow: 0 0 18px rgba(8, 145, 178, 0.25);
+  --btn-ghost-hover-glow: 0 0 32px rgba(8, 145, 178, 0.3);
+  
+  /* Nav link hover for light mode */
+  --nav-link-hover-bg: rgba(248, 250, 252, 0.9);
+  --nav-link-hover-border: rgba(8, 145, 178, 0.4);
+  --nav-link-hover-shadow: 0 0 16px rgba(8, 145, 178, 0.2);
+  --nav-link-active-bg: var(--neon);
+  --nav-link-active-text: #ffffff;
+  --nav-link-active-shadow-1: 0 4px 16px rgba(8, 145, 178, 0.4);
+  --nav-link-active-shadow-2: 0 0 40px rgba(8, 145, 178, 0.5);
+  
+  /* Carousel dots */
+  --carousel-dot-border: rgba(100, 116, 139, 0.5);
+  
+  /* Product card */
+  --product-card-border: #e2e8f0;
+  --product-card-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+  --product-card-hover-border: rgba(8, 145, 178, 0.6);
+  --product-card-hover-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+  --product-card-glow: rgba(8, 145, 178, 0.08);
+  
+  /* Filter pill */
+  --filter-pill-bg: rgba(255, 255, 255, 0.9);
+}
+
+/* Theme transition for smooth switching */
+body,
+.navbar,
+.hero-card,
+.product-card,
+.profile-card,
+.btn,
+.nav-link,
+.filter-pill {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
