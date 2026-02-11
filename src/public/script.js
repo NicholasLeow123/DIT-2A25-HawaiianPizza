@@ -200,22 +200,42 @@ async function updateProfile() {
     loadProfile();
   } catch(err){ console.error(err); alert('Error updating profile'); }
 }
-// --------- CART (front-end stub for now) ---------
 
-function addToCartFromCard(cardEl) {
-  const id = cardEl.dataset.productId;
-  const name = cardEl.dataset.productName;
-  const type = cardEl.dataset.productType || "Car";
-  const priceDisplay = cardEl.dataset.productPriceDisplay || "";
+// --------- CART (backend integration: cars + parts) ---------
+async function addToCartFromCard(cardEl) {
+  const currentPage = (window.location.pathname.split("/").pop() || "").toLowerCase();
 
-  if (!id || !name) return;
+  // If on parts.html -> PART, otherwise assume CAR
+  const itemType = currentPage === "parts.html" ? "PART" : "CAR";
 
-  let items = getCartItems();
-  items.push({ id, name, type, priceDisplay });
-  setCartItems(items);
+  const itemId = Number(cardEl.dataset.productId);
+  const quantity = 1;
 
-  // For now just show a simple message – backend cart can replace this later
-  alert(`Added to cart: ${name}. Cart integration will be handled by the backend.`);
+  if (!Number.isInteger(itemId)) {
+    alert("Internal error: invalid product ID on card.");
+    console.error("Invalid data-product-id:", cardEl.dataset.productId);
+    return;
+  }
+
+  try {
+    const res = await fetch("/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ itemType, itemId, quantity }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.error || "Failed to add to cart.");
+      return;
+    }
+
+    alert("Added to cart!");
+  } catch (err) {
+    console.error(err);
+    alert("Network/server error adding to cart.");
+  }
 }
 
 //Carousel
@@ -232,7 +252,7 @@ function initHeroCarousel() {
 
   let currentIndex = 0;
   let timerId = null;
-  const AUTO_ROTATE_MS = 6000;
+  const AUTO_ROTATE_MS = 3000;
 
   function setActive(index) {
     currentIndex = (index + slides.length) % slides.length;
