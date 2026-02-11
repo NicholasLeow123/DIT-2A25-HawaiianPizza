@@ -57,8 +57,39 @@ async function checkout(req, res, next) {
   }
 }
 
+// DELETE /cart
+async function removeFromCart(req, res, next) {
+  try {
+    const { itemType, itemId, quantity } = req.body;
+
+    const parsedItemId = Number(itemId);
+    const parsedQuantity = Number(quantity || 1);
+
+    if (!itemType || !['CAR', 'PART'].includes(itemType)) {
+      return res.status(400).json({ error: 'itemType must be CAR or PART.' });
+    }
+    if (Number.isNaN(parsedItemId) || parsedItemId <= 0) {
+      return res.status(400).json({ error: 'itemId must be a valid number.' });
+    }
+    if (Number.isNaN(parsedQuantity) || parsedQuantity <= 0) {
+      return res.status(400).json({ error: 'quantity must be a positive number.' });
+    }
+
+    const updatedCart = await cartModel.removeItem({
+      itemType,
+      itemId: parsedItemId,
+      quantity: parsedQuantity,
+    });
+
+    res.json(updatedCart);
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   getCart,
   addToCart,
+  removeFromCart,
   checkout,
 };

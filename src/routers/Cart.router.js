@@ -10,6 +10,9 @@ router.get('/', cartController.getCart);
 // Add item to cart
 router.post('/', cartController.addToCart);
 
+// Delete items from cart
+router.delete('/', cartController.removeFromCart);
+
 // Checkout (apply discount + clear)
 router.post('/checkout', cartController.checkout);
 
