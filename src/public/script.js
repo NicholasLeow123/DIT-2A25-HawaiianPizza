@@ -143,7 +143,7 @@ async function register() {
     } else { alert(data.error); }
   } catch(err){ console.error(err); alert('Error registering'); }
 }
-}
+
 
 function closeCompareModal() {
   const backdrop = document.getElementById("compareBackdrop");
