@@ -10,6 +10,7 @@ const cartRouter = require('./routers/Cart.router');
 const compareRoutes = require('./routers/compareRoutes');
 const categoriesRouter = require('./routers/categories');
 const carPartsRoutes = require('./routers/carPartsRoutes');
+const wishlistRoutes = require("./routes/wishlistRoutes");
 
 const path = require('path');
 
@@ -31,6 +32,8 @@ app.use('/api/compare', compareRoutes);
 app.use('/api/categories', categoriesRouter);
 //car parts page routes
 app.use('/api/carParts', carPartsRoutes);
+//wishlist routes
+app.use("/api/wishlist", wishlistRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/somethings', somethingRouter);
