@@ -1,0 +1,25 @@
+/* css design for the filter */
+/* Minimal styling */
+.filters-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.filter-pill {
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  background: #f0f0f0;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 16px;
+}
+.filter-pill.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+#results > li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  list-style: none;
+}

@@ -1,0 +1,198 @@
+/* Card Components */
+
+/* Hero Card - Single definition matching original */
+
+.hero-card {
+  border-radius: var(--radius-card);
+  background: radial-gradient(circle at 0% 0%, var(--hero-card-bg-gradient-1), transparent 56%),
+    radial-gradient(circle at 100% 100%, var(--hero-card-bg-gradient-2), transparent 56%),
+    linear-gradient(145deg, var(--hero-card-bg-1), var(--hero-card-bg-2));
+  border: 1px solid var(--hero-card-border);
+  box-shadow: var(--shadow-strong);
+  padding: 16px 18px;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image: linear-gradient(
+      120deg,
+      var(--hero-card-grid-1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      210deg,
+      var(--hero-card-grid-2) 1px,
+      transparent 1px
+    );
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.hero-car-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+.hero-car-name {
+  margin-top: 4px;
+  font-family: "Orbitron";
+  font-size: 1.1rem;
+}
+
+.hero-card-strip {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  display: flex;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.hero-tag-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hero-tag-pill-border);
+  font-size: 0.7rem;
+}
+
+.hero-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 0.75rem;
+}
+
+.hero-spec-label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.hero-spec-value {
+  font-family: "Orbitron";
+  margin-top: 3px;
+}
+
+.hero-price-row {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8rem;
+}
+
+.hero-main-price {
+  font-size: 1rem;
+  font-family: "Orbitron";
+  color: var(--accent-primary);
+}
+
+.hero-dummy-car {
+  position: absolute;
+  right: -40px;
+  bottom: -48px;
+  width: 200px;
+  height: 72px;
+  background: radial-gradient(
+    circle at 30% 20%,
+    var(--hero-dummy-car-glow),
+    transparent 60%
+  );
+  filter: blur(2px);
+  opacity: 0.55;
+  border-radius: 60px;
+  box-shadow: 0 0 26px var(--accent-soft);
+  transform: perspective(380px) rotateX(16deg) skewX(-12deg);
+  pointer-events: none;
+}
+
+/* Product Card */
+
+.product-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  background: var(--bg-panel);
+  border: 1px solid var(--product-card-border);
+  padding: 10px 11px 12px;
+  box-shadow: var(--product-card-shadow);
+  overflow: hidden;
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              border-color var(--transition-fast),
+              background var(--transition-fast);
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at top, var(--product-card-glow), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--product-card-hover-border);
+  box-shadow: var(--product-card-hover-shadow);
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-tag {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+.product-name {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.product-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.product-price-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.product-price {
+  font-family: "Orbitron";
+  font-size: 0.95rem;
+  color: var(--accent-primary);
+}
+
+.product-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+/* Profile Card */
+
+.profile-card {
+  border-radius: var(--radius-card);
+  background: var(--bg-panel);
+  border: 1px solid #1f2937;
+  padding: 14px 16px;
+  box-shadow: var(--shadow-strong);
+  font-size: 0.85rem;
+}

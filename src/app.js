@@ -8,6 +8,8 @@ const somethingRouter = require('./routers/Something.router');
 const personRouter = require('./routers/Person.router');
 const cartRouter = require('./routers/Cart.router');
 const compareRoutes = require('./routers/compareRoutes');
+const categoriesRouter = require('./routers/categories');
+const carPartsRoutes = require('./routers/carPartsRoutes');
 const wishlistRoutes = require("./routes/wishlistRoutes");
 
 const path = require('path');
@@ -20,9 +22,16 @@ app.use(express.urlencoded({ extended: true }));
 //cars page routes
 app.use('/cars', require('./routers/carsRoutes'));
 
+//car parts page routes
+app.use('/carParts', require('./routers/carPartsRoutes'));
+
 //compare page routes
 app.use('/api/compare', compareRoutes);
 
+//categories page routes
+app.use('/api/categories', categoriesRouter);
+//car parts page routes
+app.use('/api/carParts', carPartsRoutes);
 //wishlist routes
 app.use("/api/wishlist", wishlistRoutes);
 

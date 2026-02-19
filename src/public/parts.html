@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <title>Chase's Cars | Car Parts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./styles.css" />
+    <script src="/scripts/theme.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
     <div class="page">
@@ -29,6 +30,9 @@
 
         <div class="nav-profile">
           <a href="profile.html" id="navGreeting">Hello, Guest</a>
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <span id="theme-icon">☀️</span>
+          </button>
         </div>
       </header>
 
@@ -42,14 +46,10 @@
         </section>
 
         <!-- Filters (edited by bryan, assisted by ai) -->
-        <section class="filters-bar">
-          <button class="filter-pill active">All</button>
-          <button class="filter-pill">JDM</button>
-          <button class="filter-pill">Euro</button>
-          <button class="filter-pill">Muscle</button>
-          <button class="filter-pill">AWD</button>
+        <section class="filters-bar" id="filters-bar">
+          <button class="filter-pill active" data-value="">All</button>
+          <!-- category buttons inserted dynamically here -->
         </section>
-        
 
         <ul id="results"></ul>
         <!-- Cars grid -->

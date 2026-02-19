@@ -7,17 +7,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// prisma category model for the category filter, ai assisted
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  slug      String    @unique
+  type      String?
+  carParts  carParts[]
+  cars      cars[]
+}
+
+
 model carParts {
   id            Int     @id @default(autoincrement())
+  categoryId    Int
+  category      Category @relation(fields: [categoryId], references: [id])
   name          String
   type          String
   price_display String
   description   String
   partId        String?
+  stock_total    Int @default(0)
+  stock_reserved Int @default(0)
+  stock_sold     Int @default(0)
 }
 
 model cars {
   id            Int          @id @default(autoincrement())
+  categoryId    Int
+  category      Category @relation(fields: [categoryId], references: [id])
   name          String
   type          String
   power         String
@@ -25,6 +43,9 @@ model cars {
   description   String
   carsid        String
   comparison    comparison[]
+  stock_total    Int @default(10)
+  stock_reserved Int @default(0)
+  stock_sold     Int @default(0)
 }
 
 model comparison {
@@ -32,4 +53,50 @@ model comparison {
   session_id String
   carId      Int
   cars       cars   @relation(fields: [carId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_car")
+}
+
+enum CartItemType {
+  CAR
+  PART
+}
+
+model cartItem {
+  id        Int          @id @default(autoincrement())
+  itemType  CartItemType
+  carId     Int?
+  partId    Int?
+  name      String
+  unitPrice Float
+  quantity  Int
+  createdAt DateTime     @default(now())
+
+  @@index([itemType, carId])
+  @@index([itemType, partId])
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String  @unique
+  email     String  @unique
+  password  String
+  address   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  lastViewedCars LastViewedCar[]
+}
+
+model LastViewedCar {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  carId     Int
+  viewedAt  DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  car  cars @relation(fields: [carId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, carId])
 }
