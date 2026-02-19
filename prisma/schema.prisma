@@ -74,3 +74,29 @@ model cartItem {
   @@index([itemType, partId])
 }
 
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String  @unique
+  email     String  @unique
+  password  String
+  address   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  lastViewedCars LastViewedCar[]
+}
+
+model LastViewedCar {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  carId     Int
+  viewedAt  DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  car  cars @relation(fields: [carId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, carId])
+}
